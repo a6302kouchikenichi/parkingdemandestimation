@@ -1,0 +1,87 @@
+{
+  "label": "hours_daily",
+  "model": "linear_stable",
+  "target": "aveHours_daily",
+  "fixed_features": [
+    "free_minutes",
+    "Capacity (lot)"
+  ],
+  "fixed_choice": "forced_free+capacity",
+  "features": [
+    "free_minutes",
+    "Capacity (lot)",
+    "Commercial_500",
+    "train_station_500",
+    "university_500"
+  ],
+  "coef": {
+    "const": 260.12983204950564,
+    "free_minutes": 0.1373633808272583,
+    "Capacity (lot)": 4.788225849489759,
+    "Commercial_500": 24.423555037497472,
+    "train_station_500": 314.68681481994247,
+    "university_500": 48.77959660962945
+  },
+  "metrics_full": {
+    "n": 19,
+    "k": 6,
+    "rss": 3564842.30323272,
+    "tss": 24150514.867590155,
+    "r2": 0.852390629235954,
+    "adj_r2": 0.7956177943267055,
+    "bic": 248.36827041739784,
+    "aic": 242.7016365423992
+  },
+  "evaluation": {
+    "holdout": {
+      "train": {
+        "R2": 0.8538615044951121,
+        "RMSE": 425.08011202620406,
+        "MAPE": 30.462788233890443
+      },
+      "test": {
+        "R2": 0.7342222329180423,
+        "RMSE": 588.0905499023296,
+        "MAPE": 65.91513932742879
+      },
+      "params": {
+        "TEST_SIZE": 0.2,
+        "RANDOM_STATE": 42
+      }
+    },
+    "kfold": {
+      "train": {
+        "R2_mean": 0.8624208969467103,
+        "R2_std": 0.03472410151552029,
+        "RMSE_mean": 410.168622659162,
+        "RMSE_std": 44.33451600834073,
+        "MAPE_mean": 35.97194820814424,
+        "MAPE_std": 7.465742409069466
+      },
+      "test": {
+        "R2_mean": -0.4779125909972336,
+        "R2_std": 2.2910921220549696,
+        "RMSE_mean": 760.7100323722464,
+        "RMSE_std": 364.463833029287,
+        "MAPE_mean": 42.17119051930335,
+        "MAPE_std": 14.83753508065511
+      },
+      "params": {
+        "N_SPLITS": 5,
+        "RANDOM_STATE": 42
+      }
+    }
+  },
+  "preprocess": {
+    "sanitize": "drop NaN/Inf & zero-variance"
+  },
+  "params": {
+    "TEST_SIZE": 0.2,
+    "N_SPLITS": 5,
+    "RANDOM_STATE": 42,
+    "VIF_THR": 10.0,
+    "MAX_FEATS": 8,
+    "MIN_NONFIXED": 2,
+    "MAX_NONFIXED": 3
+  }
+}

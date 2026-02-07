@@ -1,0 +1,12 @@
+pandas
+numpy
+geopandas
+shapely
+geopy
+streamlit>=1.0
+statsmodels
+openpyxl
+chardet
+folium
+streamlit-folium
+pyarrow
